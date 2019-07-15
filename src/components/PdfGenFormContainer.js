@@ -1,9 +1,9 @@
 import React from "react";
 import ServiceRegionRadioBtns from "./ServiceRegionRadioBtns";
 import CustomerInformation from "./CustomerInformation";
-import ProductSow from './ExtendedOptionsTwo/ProductSow'
-import TeradataCustomerSOW from './ExtendedOptionsTwo/TeradataCustomerSOW'
-import CustomProfessionalServicesSow from './ExtendedOptionsTwo/CustomProfessionalServicesSow'
+import ProductSow from "./ExtendedOptionsTwo/ProductSow";
+import TeradataCustomerSOW from "./ExtendedOptionsTwo/TeradataCustomerSOW";
+import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfessionalServicesSow";
 
 // import ProductSow from "./SOW_Type/ProductSow";
 // import TeraDataSow from "./SOW_Type/TeraDataSOW";
@@ -16,11 +16,13 @@ import SowType from "./SOWType";
 // Redux
 import { connect } from "react-redux";
 
+//This is a test
+
 class PdfGenFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      DXi: '',
+      DXi: "",
       id: null,
       serviceRegion: ["EMEA", "APAC", "NA & LATAM"],
       areaSelectedOption: [],
@@ -88,9 +90,9 @@ class PdfGenFormContainer extends React.Component {
 
   getProductFamilies = () => {
     fetch("http://localhost:4000/product_familes")
-      .then(response => response.json())
-      .then(response => this.setState({ product_families: response.data }))
-      .catch(err => console.error(err));
+      .then((response) => response.json())
+      .then((response) => this.setState({ product_families: response.data }))
+      .catch((err) => console.error(err));
   };
 
   // checkForDups = () => {
@@ -109,20 +111,20 @@ class PdfGenFormContainer extends React.Component {
     )
       .then(this.getProductFamilies)
       // .then(this.checkForDups())
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   };
   // === End of SOW Type group ===
 
   handleFormSubmit(e) {
     e.preventDefault();
-    let optionOne,optionTwo
+    let optionOne, optionTwo;
 
     // if(!this.props.DXI) {
     //   optionOne = ''
     // } else {
     //   optionOne: this.props.list.DXI;
     // }
-    
+
     // if(!this.props.KEY) {
     //   optionTwo = ''
     // } else {
@@ -131,8 +133,11 @@ class PdfGenFormContainer extends React.Component {
     const { DXi, KEY, Lotus, sclari } = this.state;
 
     const list = {
-      DXi, KEY, Lotus, sclari
-    }
+      DXi,
+      KEY,
+      Lotus,
+      sclari
+    };
 
     const formPayload = {
       areaSelectedOption: this.state.areaSelectedOption,
@@ -161,7 +166,7 @@ class PdfGenFormContainer extends React.Component {
 
     if (this.state.sowTypeSelectedOption.indexOf(newSelection) > -1) {
       newSelectionArray = this.state.sowTypeSelectedOption.filter(
-        item => item !== newSelection
+        (item) => item !== newSelection
       );
     } else {
       newSelectionArray = [...this.state.sowTypeSelectedOption, newSelection];
@@ -289,7 +294,7 @@ class PdfGenFormContainer extends React.Component {
           <input
             value={productFamilyNew.productFamily}
             placeholder={"Add New Product Family"}
-            onChange={e =>
+            onChange={(e) =>
               this.setState({
                 productFamilyNew: {
                   ...productFamilyNew,
@@ -307,7 +312,7 @@ class PdfGenFormContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   textArea: state.textArea,
   list: state.list
 });
@@ -316,7 +321,6 @@ export default connect(
   mapStateToProps,
   {}
 )(PdfGenFormContainer);
-
 
 // export default connect(
 //   mapStateToProps,
