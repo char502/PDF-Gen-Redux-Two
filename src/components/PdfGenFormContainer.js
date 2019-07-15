@@ -1,6 +1,7 @@
 import React from "react";
 import ServiceRegionRadioBtns from "./ServiceRegionRadioBtns";
 import CustomerInformation from "./CustomerInformation";
+import CheckboxTestComponent from "./ExtendedOptionsTwo/CheckboxTestComponent/CheckboxTestComponent";
 import ProductSow from "./ExtendedOptionsTwo/ProductSow/ProductSow";
 import TeradataCustomerSOW from "./ExtendedOptionsTwo/TeradataCustomerSOW/TeradataCustomerSOW";
 import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfessionalServicesSow/CustomProfessionalServicesSow";
@@ -250,6 +251,7 @@ class PdfGenFormContainer extends React.Component {
             handleChange={this.handleTextArea}
             placeholder={"Enter Customer Information Here"}
           />
+          <CheckboxTestComponent />
           <ProductSow />
           <TeradataCustomerSOW />
           <CustomProfessionalServicesSow />

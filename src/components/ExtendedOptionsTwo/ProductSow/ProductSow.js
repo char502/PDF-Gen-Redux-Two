@@ -1,44 +1,61 @@
 import React, { Component } from "react";
-import SimpleComponent from "./SimpleComponent";
-// import InputComponent from "../inputComponent/inputComponent";
+import CheckboxComponent from "../common/CheckboxComponent";
+import SimpleProductComponent from "./SimpleProductComponent";
 
-class ProductSow extends Component {
-  constructor() {
-    super();
-    this.state = {
-      checked: false
-    };
-    this.handleCheckBox = this.handleCheckBox.bind(this);
-  }
-
-  handleCheckBox(e) {
-    this.setState({ checked: !this.state.checked });
-  }
-
-  render() {
-    const content = this.state.checked ? (
-      <div>
-        <SimpleComponent />
-      </div>
-    ) : null;
-
-    return (
-      <div>
-        <div>
-          <input
-            type="checkbox"
-            checked={this.state.checked}
-            onChange={this.handleCheckBox}
-          />
-          <label>Product SOW</label>
-        </div>
-        {content}
-      </div>
-    );
-  }
-}
+const ProductSow = () => {
+  return (
+    <div>
+      <CheckboxComponent
+        label="Product SOW"
+        component={SimpleProductComponent}
+      />
+    </div>
+  );
+};
 
 export default ProductSow;
+
+// import React, { Component } from "react";
+// import SimpleProductComponent from "./SimpleProductComponent";
+// // import InputComponent from "../inputComponent/inputComponent";
+
+// class ProductSow extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       checked: false
+//     };
+//     this.handleCheckBox = this.handleCheckBox.bind(this);
+//   }
+
+//   handleCheckBox(e) {
+//     this.setState({ checked: !this.state.checked });
+//   }
+
+//   render() {
+//     const content = this.state.checked ? (
+//       <div>
+//         <SimpleProductComponent />
+//       </div>
+//     ) : null;
+
+//     return (
+//       <div>
+//         <div>
+//           <input
+//             type="checkbox"
+//             checked={this.state.checked}
+//             onChange={this.handleCheckBox}
+//           />
+//           <label>Product SOW</label>
+//         </div>
+//         {content}
+//       </div>
+//     );
+//   }
+// }
+
+// export default ProductSow;
 
 // const showYes = (
 //   <div>
