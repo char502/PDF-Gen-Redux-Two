@@ -1,33 +1,72 @@
 import React, { Component } from "react";
-import InputComponent from "../inputComponent/inputComponent";
+import SimpleTeradataComponent from "./SimpleTeradataComponent";
+// import InputComponent from "../inputComponent/inputComponent";
 
-export default class ChildComponent extends Component {
+class TeradataCustomerSOW extends Component {
   constructor() {
     super();
     this.state = {
-      show: false
+      checked: false
     };
+    this.handleCheckBox = this.handleCheckBox.bind(this);
   }
 
-  onCheck = (e) => {
-    this.setState({ show: true });
-  };
+  handleCheckBox(e) {
+    this.setState({ checked: !this.state.checked });
+  }
 
   render() {
-    const showYes = (
+    const content = this.state.checked ? (
       <div>
-        <InputComponent />
-        <InputComponent />
-        <InputComponent />
+        <SimpleTeradataComponent />
       </div>
-    );
-    const noShow = (
-      <div>
-        <input type="checkbox" onChange={this.onCheck}></input>
-      </div>
-    );
-    const { show } = this.state;
+    ) : null;
 
-    return <div>{show ? showYes : noShow}</div>;
+    return (
+      <div>
+        <div>
+          <input
+            type="checkbox"
+            checked={this.state.checked}
+            onChange={this.handleCheckBox}
+          />
+          <label>Teradata Customer SOW</label>
+        </div>
+        {content}
+      </div>
+    );
   }
 }
+
+export default TeradataCustomerSOW;
+
+// export default class ChildComponent extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       show: false
+//     };
+//   }
+
+//   onCheck = (e) => {
+//     this.setState({ show: true });
+//   };
+
+//   render() {
+//     const showYes = (
+//       <div>
+//         <InputComponent />
+//         <InputComponent />
+//         <InputComponent />
+//       </div>
+//     );
+//     const noShow = (
+//       <div>
+//         <input type="checkbox" onChange={this.onCheck}></input>
+//       </div>
+//     );
+//     const { show } = this.state;
+
+//     return <div>{show ? showYes : noShow}</div>;
+//   }
+// }
