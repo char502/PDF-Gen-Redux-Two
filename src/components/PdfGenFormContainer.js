@@ -16,8 +16,6 @@ import SowType from "./SOWType";
 // Redux
 import { connect } from "react-redux";
 
-//This is a test
-
 class PdfGenFormContainer extends React.Component {
   constructor(props) {
     super(props);
