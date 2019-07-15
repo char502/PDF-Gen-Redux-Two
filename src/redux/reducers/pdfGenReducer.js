@@ -1,8 +1,8 @@
 const pdfGeneratorMainDefaultState = {
-  DXI: '',
-  ENCRYPT: '',
-  Quantum: '',
-  Sca: '',
+  DXI: "",
+  ENCRYPT: "",
+  Quantum: "",
+  Sca: ""
 };
 
 export default (state = pdfGeneratorMainDefaultState, action) => {
@@ -22,12 +22,12 @@ export default (state = pdfGeneratorMainDefaultState, action) => {
         ...state,
         DXI: action.id
       };
-      default:
-      case "ADD_SCA":
-        return {
-          ...state,
-          DXI: action.id
-        };
+    default:
+    case "ADD_SCA":
+      return {
+        ...state,
+        DXI: action.id
+      };
       return state;
   }
 };

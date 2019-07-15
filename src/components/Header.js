@@ -12,7 +12,7 @@ const Header = () => (
       RetrievePrevious
     </NavLink>
     {`   `}
-    <NavLink to="/ProfessionalServices" activeClassName="is-active">
+    <NavLink to="ProfessionalServices" activeClassName="is-active">
       Professional Services
     </NavLink>
   </header>

@@ -1,9 +1,9 @@
 import React from "react";
 import ServiceRegionRadioBtns from "./ServiceRegionRadioBtns";
 import CustomerInformation from "./CustomerInformation";
-import ProductSow from "./ExtendedOptionsTwo/ProductSow";
-import TeradataCustomerSOW from "./ExtendedOptionsTwo/TeradataCustomerSOW";
-import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfessionalServicesSow";
+import ProductSow from "./ExtendedOptionsTwo/ProductSow/ProductSow";
+import TeradataCustomerSOW from "./ExtendedOptionsTwo/TeradataCustomerSOW/TeradataCustomerSOW";
+import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfessionalServicesSow/CustomProfessionalServicesSow";
 
 // import ProductSow from "./SOW_Type/ProductSow";
 // import TeraDataSow from "./SOW_Type/TeraDataSOW";
@@ -39,29 +39,29 @@ class PdfGenFormContainer extends React.Component {
         product_family: ""
       }
     };
-    this.componentList = {
-      ProductSow: (
-        <ProdSOWExtOptions
-          title={"Extended Customer Info"}
-          name={"Extended Customer Info"}
-          type={"text"}
-          placeholder={"Extended Text Area"}
-          value={this.state.prodSowTestInformation}
-          handleExtText={this.handleExtendedTextArea}
-        />
-      ),
-      "Teradata Customer SOW": <TeradataExtOptions />,
-      "Custom Professional Services SOW": (
-        <CustomProfExtOptions
-          title={"Custom Options Info"}
-          name={"Custom Options Info"}
-          type={"text"}
-          placeholder={"Custom Options Text Area"}
-          value={this.state.customProfServicesInformation}
-          handleCustProf={this.handleCustomProfTextArea}
-        />
-      )
-    };
+    // this.componentList = {
+    //   ProductSow: (
+    //     <ProdSOWExtOptions
+    //       title={"Extended Customer Info"}
+    //       name={"Extended Customer Info"}
+    //       type={"text"}
+    //       placeholder={"Extended Text Area"}
+    //       value={this.state.prodSowTestInformation}
+    //       handleExtText={this.handleExtendedTextArea}
+    //     />
+    //   ),
+    //   "Teradata Customer SOW": <TeradataExtOptions />,
+    //   "Custom Professional Services SOW": (
+    //     <CustomProfExtOptions
+    //       title={"Custom Options Info"}
+    //       name={"Custom Options Info"}
+    //       type={"text"}
+    //       placeholder={"Custom Options Text Area"}
+    //       value={this.state.customProfServicesInformation}
+    //       handleCustProf={this.handleCustomProfTextArea}
+    //     />
+    //   )
+    // };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleTextArea = this.handleTextArea.bind(this);
@@ -250,9 +250,9 @@ class PdfGenFormContainer extends React.Component {
             handleChange={this.handleTextArea}
             placeholder={"Enter Customer Information Here"}
           />
-          // <ProductSow />
-          // <TeradataCustomerSOW />
-          // <CustomProfessionalServicesSow />
+          <ProductSow />
+          <TeradataCustomerSOW />
+          <CustomProfessionalServicesSow />
           <SowType
             title={"SOW Type"}
             setName={"SOW Type"}

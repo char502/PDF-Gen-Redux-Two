@@ -1,10 +1,10 @@
 import React from "react";
-import ServiceRegionRadioBtns from "./ServiceRegionRadioBtns";
-import CustomerInformation from "./CustomerInformation";
-import SowType from "./SOWType";
-import ProdSOWExtOptions from "./ExtendedOptions/ProdSOWExtOptions";
-import TeradataExtOptions from "./ExtendedOptions/TeradataExtOptions";
-import CustomProfExtOptions from "./ExtendedOptions/CustomProfExtOptions";
+import ServiceRegionRadioBtns from "../src/components/ServiceRegionRadioBtns";
+import CustomerInformation from "../src/components/CustomerInformation";
+import SowType from "../src/components/SOWType";
+import ProdSOWExtOptions from "../src/components/ExtendedOptions/ProdSOWExtOptions";
+import TeradataExtOptions from "../src/components/ExtendedOptions/TeradataExtOptions";
+import CustomProfExtOptions from "../src/components/ExtendedOptions/CustomProfExtOptions";
 
 class PdfGenFormContainer extends React.Component {
   constructor(props) {
@@ -72,9 +72,9 @@ class PdfGenFormContainer extends React.Component {
 
   getProductFamilies = () => {
     fetch("http://localhost:4000/product_familes")
-      .then(response => response.json())
-      .then(response => this.setState({ product_families: response.data }))
-      .catch(err => console.error(err));
+      .then((response) => response.json())
+      .then((response) => this.setState({ product_families: response.data }))
+      .catch((err) => console.error(err));
   };
 
   // checkForDups = () => {
@@ -89,13 +89,11 @@ class PdfGenFormContainer extends React.Component {
   addProductFamily = () => {
     const { productFamilyNew /* product_families */ } = this.state;
     fetch(
-      `http://localhost:4000/product_familes/add?product_family=${
-        productFamilyNew.product_family
-      }`
+      `http://localhost:4000/product_familes/add?product_family=${productFamilyNew.product_family}`
     )
       .then(this.getProductFamilies)
       // .then(this.checkForDups())
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   };
   // === End of SOW Type group ===
 
@@ -172,7 +170,7 @@ class PdfGenFormContainer extends React.Component {
     // console.log(e.target.checked);
     if (this.state.sowTypeSelectedOption.indexOf(newSelection) > -1) {
       newSelectionArray = this.state.sowTypeSelectedOption.filter(
-        item => item !== newSelection
+        (item) => item !== newSelection
       );
     } else {
       newSelectionArray = [...this.state.sowTypeSelectedOption, newSelection];
@@ -283,7 +281,7 @@ class PdfGenFormContainer extends React.Component {
           <input
             value={productFamilyNew.productFamily}
             placeholder={"Add New Product Family"}
-            onChange={e =>
+            onChange={(e) =>
               this.setState({
                 productFamilyNew: {
                   ...productFamilyNew,
