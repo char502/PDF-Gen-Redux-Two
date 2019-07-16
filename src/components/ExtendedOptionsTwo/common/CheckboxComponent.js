@@ -19,6 +19,7 @@ export default class CheckboxComponent extends Component {
     const content = this.state.checked ? (
       <div>
         <this.props.component />
+        {/* {this.props.children} */}
       </div>
     ) : null;
 

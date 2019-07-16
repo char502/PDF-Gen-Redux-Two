@@ -1,61 +1,66 @@
 import React, { Component } from "react";
-import CheckboxComponent from "../common/CheckboxComponent";
 import SimpleCustomProfessionalServicesSow from "./SimpleCustomProfessionalServicesSow";
+// import InputComponent from "../inputComponent/inputComponent";
 
-const CustomProfessionalServicesSow = () => {
-  return (
-    <div>
-      <CheckboxComponent
-        label="Custom Professional Services SOW"
-        component={SimpleCustomProfessionalServicesSow}
-      />
-    </div>
-  );
-};
+class TeradataCustomerSOW extends Component {
+  constructor() {
+    super();
+    this.state = {
+      checked: false
+    };
+    this.handleCheckBox = this.handleCheckBox.bind(this);
+  }
 
-export default CustomProfessionalServicesSow;
+  handleCheckBox(e) {
+    this.setState({ checked: !this.state.checked });
+  }
+
+  render() {
+    const content = this.state.checked ? (
+      <div>
+        <SimpleCustomProfessionalServicesSow />
+      </div>
+    ) : null;
+
+    return (
+      <div>
+        <div className="checkbox-group">
+          <label className="checkbox-group">
+            <input
+              className="form-checkbox"
+              type="checkbox"
+              checked={this.state.checked}
+              onChange={this.handleCheckBox}
+            />
+            Custom Professional Services Sow
+          </label>
+        </div>
+        {content}
+      </div>
+    );
+  }
+}
+
+export default TeradataCustomerSOW;
 
 // import React, { Component } from "react";
+// import CheckboxComponent from "../common/CheckboxComponent";
 // import SimpleCustomProfessionalServicesSow from "./SimpleCustomProfessionalServicesSow";
-// // import InputComponent from "../inputComponent/inputComponent";
 
-// class TeradataCustomerSOW extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       checked: false
-//     };
-//     this.handleCheckBox = this.handleCheckBox.bind(this);
-//   }
-
-//   handleCheckBox(e) {
-//     this.setState({ checked: !this.state.checked });
-//   }
-
-//   render() {
-//     const content = this.state.checked ? (
-//       <div>
-//         <SimpleCustomProfessionalServicesSow />
-//       </div>
-//     ) : null;
-
+// const CustomProfessionalServicesSow = () => {
 //     return (
-//       <div>
 //         <div>
-//           <input
-//             type="checkbox"
-//             checked={this.state.checked}
-//             onChange={this.handleCheckBox}
-//           />
-//           <label>Custom Professional Services Sow</label>
+//             <CheckboxComponent
+//                 label="Custom Professional Services SOW"
+//                 component={SimpleCustomProfessionalServicesSow}
+//             />
 //         </div>
-//         {content}
-//       </div>
 //     );
-//   }
-// }
+// };
 
-// export default TeradataCustomerSOW;
+// export default CustomProfessionalServicesSow;
+
+//////////////////////////////////////////////////////////////////////////////////
 
 // export default class ChildComponent extends Component {
 //   constructor() {

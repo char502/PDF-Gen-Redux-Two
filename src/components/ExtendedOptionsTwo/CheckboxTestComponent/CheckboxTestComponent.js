@@ -4,7 +4,7 @@ import SimpleCheckboxTestComponent from "./SimpleCheckboxTestComponent";
 // import SimpleCustomProfessionalServicesSow from "./SimpleCustomProfessionalServicesSow";
 // import InputComponent from "../inputComponent/inputComponent";
 
-const CheckboxTestComponent = (props) => {
+const CheckboxTestComponent = () => {
   return (
     <div>
       <CheckboxComponent

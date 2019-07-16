@@ -1,7 +1,7 @@
 import React from "react";
 import ServiceRegionRadioBtns from "./ServiceRegionRadioBtns";
 import CustomerInformation from "./CustomerInformation";
-import CheckboxTestComponent from "./ExtendedOptionsTwo/CheckboxTestComponent/CheckboxTestComponent";
+// import CheckboxTestComponent from "./ExtendedOptionsTwo/CheckboxTestComponent/CheckboxTestComponent";
 import ProductSow from "./ExtendedOptionsTwo/ProductSow/ProductSow";
 import TeradataCustomerSOW from "./ExtendedOptionsTwo/TeradataCustomerSOW/TeradataCustomerSOW";
 import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfessionalServicesSow/CustomProfessionalServicesSow";
@@ -9,10 +9,10 @@ import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfession
 // import ProductSow from "./SOW_Type/ProductSow";
 // import TeraDataSow from "./SOW_Type/TeraDataSOW";
 // import CustomSow from "./SOW_Type/CustomSOW";
-import ProdSOWExtOptions from "./ExtendedOptions/ProdSOWExtOptions";
-import TeradataExtOptions from "./ExtendedOptions/TeradataExtOptions";
-import CustomProfExtOptions from "./ExtendedOptions/CustomProfExtOptions";
-import SowType from "./SOWType";
+// import ProdSOWExtOptions from "./ExtendedOptions/ProdSOWExtOptions";
+// import TeradataExtOptions from "./ExtendedOptions/TeradataExtOptions";
+// import CustomProfExtOptions from "./ExtendedOptions/CustomProfExtOptions";
+// import SowType from "./SOWType";
 
 // Redux
 import { connect } from "react-redux";
@@ -116,7 +116,7 @@ class PdfGenFormContainer extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    let optionOne, optionTwo;
+    // let optionOne, optionTwo;
 
     // if(!this.props.DXI) {
     //   optionOne = ''
@@ -251,11 +251,22 @@ class PdfGenFormContainer extends React.Component {
             handleChange={this.handleTextArea}
             placeholder={"Enter Customer Information Here"}
           />
-          <CheckboxTestComponent />
-          <ProductSow />
-          <TeradataCustomerSOW />
-          <CustomProfessionalServicesSow />
-          <SowType
+          <div className="form-group">
+            <label className="form-label">
+              SOW type
+              <h6>What type of SOW do you want to generate?</h6>
+            </label>
+            <div>
+              <ProductSow />
+
+              <TeradataCustomerSOW />
+
+              <CustomProfessionalServicesSow />
+            </div>
+            {/* <CheckboxTestComponent /> */}
+          </div>
+
+          {/* <SowType
             title={"SOW Type"}
             setName={"SOW Type"}
             subtitle={"What type of SOW do you want to generate?"}
@@ -265,13 +276,13 @@ class PdfGenFormContainer extends React.Component {
             selectedOptions={this.state.sowTypeSelectedOption}
             //Props for extended components
             componentList={this.componentList}
-            /* {...propsForProdSOWExtOptions} */
-            /* value={this.state.prodSowTestInformation} */
+            {...propsForProdSOWExtOptions}
+            value={this.state.prodSowTestInformation}
             handleExtText={this.handleExtendedTextArea}
-            /* Custom professional services */
-            /* value={this.state.customProfServicesInformation} */
+            Custom professional services
+            value={this.state.customProfServicesInformation}
             handleCustProf={this.handleCustomProfTextArea}
-          />
+          /> */}
           <div>
             <input
               type="submit"
