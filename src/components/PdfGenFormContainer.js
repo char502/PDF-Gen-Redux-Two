@@ -1,7 +1,7 @@
 import React from "react";
 import ServiceRegionRadioBtns from "./ServiceRegionRadioBtns";
 import CustomerInformation from "./CustomerInformation";
-// import CheckboxTestComponent from "./ExtendedOptionsTwo/CheckboxTestComponent/CheckboxTestComponent";
+import CheckboxTestComponent from "./ExtendedOptionsTwo/CheckboxTestComponent/CheckboxTestComponent";
 import ProductSow from "./ExtendedOptionsTwo/ProductSow/ProductSow";
 import TeradataCustomerSOW from "./ExtendedOptionsTwo/TeradataCustomerSOW/TeradataCustomerSOW";
 import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfessionalServicesSow/CustomProfessionalServicesSow";
@@ -257,13 +257,11 @@ class PdfGenFormContainer extends React.Component {
               <h6>What type of SOW do you want to generate?</h6>
             </label>
             <div>
+              <CheckboxTestComponent />
               <ProductSow />
-
               <TeradataCustomerSOW />
-
               <CustomProfessionalServicesSow />
             </div>
-            {/* <CheckboxTestComponent /> */}
           </div>
 
           {/* <SowType

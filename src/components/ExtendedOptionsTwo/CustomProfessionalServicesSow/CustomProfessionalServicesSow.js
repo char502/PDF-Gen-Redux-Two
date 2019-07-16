@@ -33,9 +33,9 @@ class TeradataCustomerSOW extends Component {
               onChange={this.handleCheckBox}
             />
             Custom Professional Services Sow
+            {content}
           </label>
         </div>
-        {content}
       </div>
     );
   }

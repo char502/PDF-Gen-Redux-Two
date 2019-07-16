@@ -25,15 +25,18 @@ export default class CheckboxComponent extends Component {
 
     return (
       <div>
-        <div>
-          <input
-            type="checkbox"
-            checked={this.state.checked}
-            onChange={this.handleCheckBox}
-          />
-          <label>{this.props.label}</label>
+        <div className="checkbox-group">
+          <label>
+            <input
+              className="form-checkbox"
+              type="checkbox"
+              checked={this.state.checked}
+              onChange={this.handleCheckBox}
+            />
+            {this.props.label}
+            {content}
+          </label>
         </div>
-        {content}
       </div>
     );
   }

@@ -33,9 +33,9 @@ class ProductSow extends Component {
               onChange={this.handleCheckBox}
             />
             Product SOW
+            {content}
           </label>
         </div>
-        {content}
       </div>
     );
   }
