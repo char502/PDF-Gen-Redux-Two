@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import CheckboxComponent from "../common/CheckboxComponent";
 import SimpleCheckboxTestComponent from "./SimpleCheckboxTestComponent";
 

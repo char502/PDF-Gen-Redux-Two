@@ -87,6 +87,9 @@ input#SOW Type.form-checkbox {
   margin-right: 10px;
 }
 
+.btnSpacing {
+  margin: 0 10px 0 0;
+}
 /* input.form-checkbox {
   padding-left: 30px;
 } */

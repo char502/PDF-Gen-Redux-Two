@@ -289,11 +289,12 @@ class PdfGenFormContainer extends React.Component {
             />
             <button
               /* type="submit" */
-              className="btn btn-primary float-left"
+              className="btn btn-danger float-left btnSpacing"
               onClick={this.handleClearForm}
             >
               Clear Form
             </button>
+            <button className="btn btn-primary float-left">Pdf Preview</button>
           </div>
         </form>
         <br />
