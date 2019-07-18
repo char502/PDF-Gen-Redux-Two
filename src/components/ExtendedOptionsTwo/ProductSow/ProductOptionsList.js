@@ -1,12 +1,14 @@
+import quantumDXiBackup from "../../../images/quantumDXiBackup.jpg";
+import quantumEncryptionKeyManager from "../../../images/quantumEncryptionKeyManager.jpg";
+import quantumLATTUSStorage from "../../../images/quantumLATTUSStorage.jpg";
+import quantumScalari3LTO from "../../../images/quantumScalari3LTO.jpg";
+
 let productOptions = [
-  //   {
-  //     id: 0,
-  //     product: "Select a Product Family",
-  //     productConfig: []
-  //   },
   {
     id: 1,
-    product: "DXi Products",
+    productName: "DXi Products",
+    productImage: quantumDXiBackup,
+    productImageAlt: "A DXi Backup machine",
     productConfig: [
       "Select a DXI Config",
       "Artico Install and Config",
@@ -16,7 +18,9 @@ let productOptions = [
   },
   {
     id: 2,
-    product: "Encryption Key Manager Products",
+    productName: "Encryption Key Manager Products",
+    productImage: quantumEncryptionKeyManager,
+    productImageAlt: "quantumEncryptionKeyManager",
     productConfig: [
       "Select an EKM Product Config",
       "Scalar Key Manager",
@@ -25,7 +29,9 @@ let productOptions = [
   },
   {
     id: 3,
-    product: "Quantum LATTUS Storage",
+    productName: "Quantum LATTUS Storage",
+    productImage: quantumLATTUSStorage,
+    productImageAlt: "Quantum LATTUS Storage",
     productConfig: [
       "Select a LATTUS Config",
       "Lattus Hardware Install",
@@ -34,7 +40,9 @@ let productOptions = [
   },
   {
     id: 4,
-    product: "Quantum Scalari 3LTO",
+    productName: "Quantum Scalari 3LTO",
+    productImage: quantumScalari3LTO,
+    productImageAlt: "quantumScalari3LTO",
     productConfig: [
       "Select a Scalari Configuration",
       "Option One Scalari3LTO",

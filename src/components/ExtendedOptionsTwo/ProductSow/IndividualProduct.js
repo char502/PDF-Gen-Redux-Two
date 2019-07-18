@@ -26,7 +26,7 @@ class IndividualProduct extends Component {
       <div>
         <div className="thumbnail.form-group">
           {/* <img src={this.props.src} alt={this.props.alt} /> */}
-          An Image here
+          <img src={this.props.image} alt={this.props.alt} />
           <input
             className="form-checkbox"
             type="checkbox"

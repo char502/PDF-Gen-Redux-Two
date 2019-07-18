@@ -36,8 +36,10 @@ class SimpleComponent extends Component {
             return (
               <div key={i}>
                 <IndividualProduct
-                  label={product.product}
+                  label={product.productName}
                   options={product.productConfig}
+                  image={product.productImage}
+                  alt={product.productImageAlt}
                 />
               </div>
             );
