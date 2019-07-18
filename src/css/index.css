@@ -90,6 +90,13 @@ input#SOW Type.form-checkbox {
 .btnSpacing {
   margin: 0 10px 0 0;
 }
+
+div.thumbnail.form-group {
+  border: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border: solid #228abd;
+}
 /* input.form-checkbox {
   padding-left: 30px;
 } */

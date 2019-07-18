@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import productOptions from "./ProductOptionsList";
+// import productOptions from "./ProductOptionsList";
+import SelectOptionComponent from "./SelectOptionComponent";
 
 class IndividualProduct extends Component {
   constructor() {
@@ -9,32 +10,35 @@ class IndividualProduct extends Component {
       value: "Select a Product Configuration"
     };
     this.handleCheckBox = this.handleCheckBox.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
+    // this.handleSelectChange = this.handleSelectChange.bind(this);
+    // this.dropdownOptions = this.dropdownOptions.bind(this);
   }
 
   handleCheckBox(e) {
     this.setState({ checked: !this.state.checked });
   }
 
-  handleSelectChange(e) {
-    this.setState({ value: e.target.value });
-  }
+  //   handleSelectChange(e) {
+  //     this.setState({ value: e.target.value });
+  //   }
 
-  dropdownOptions() {
-    return productOptions.map((selectOption) => (
-      <option
-        key={selectOption.productConfig}
-        value={selectOption.productConfig}
-      >
-        {selectOption.productConfig}
-      </option>
-    ));
-  }
+  //   dropdownOptions() {
+  //     return productOptions.map((selectOption) => (
+  //       <option
+  //         key={selectOption.productConfig}
+  //         value={selectOption.productConfig}
+  //       >
+  //         {selectOption.productConfig}
+  //       </option>
+  //     ));
+  //   }
 
   render() {
     const content = this.state.checked ? (
       <div>
-        This is an input component test
+        <SelectOptionComponent />
+
+        {/* This is an input component test
         <select
           id="indivProd"
           onChange={this.handleSelectChange}
@@ -42,23 +46,26 @@ class IndividualProduct extends Component {
         >
           {this.dropdownOptions}
         </select>
-        <p>Value coming from state: {this.state.value}</p>
+        <p>Value coming from state: {this.state.value}</p> */}
         {/* <this.props.inputComponent /> */}
         {/* {this.props.children} */}
       </div>
     ) : null;
     return (
       <div>
-        {/* <div>Test</div> */}
-        {/* <img src={this.props.src} alt={this.props.alt} /> */}
-        <input
-          className="form-checkbox"
-          type="checkbox"
-          checked={this.state.checked}
-          onChange={this.handleCheckBox}
-        />
-        {this.props.label}
-        {content}
+        <div className="thumbnail.form-group">
+          {/* <div>Test</div> */}
+          {/* <img src={this.props.src} alt={this.props.alt} /> */}
+          An Image here
+          <input
+            className="form-checkbox"
+            type="checkbox"
+            checked={this.state.checked}
+            onChange={this.handleCheckBox}
+          />
+          {this.props.label}
+          {content}
+        </div>
       </div>
     );
   }
