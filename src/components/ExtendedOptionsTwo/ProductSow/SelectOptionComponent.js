@@ -1,28 +1,6 @@
 import React, { Component } from "react";
 import productOptions from "./ProductOptionsList";
 
-/* <option key={i} value={selectedOption.productConfig}>
-        {selectedOption.productConfig}
-    </option> */
-// finalList = eachArr.map((config) => {
-//     config[i]
-// })
-
-// return finalList
-
-let eachArr, finalList;
-
-const result = productOptions.map(
-  (eachArr = (selectedOption, i) => {
-    return selectedOption.productConfig;
-  })
-);
-console.log(result);
-
-console.log(Object.keys(productOptions[2]));
-
-// console.log(productOptions[0].productConfig[1]);
-
 class SelectOptionComponent extends Component {
   constructor() {
     super();
@@ -39,9 +17,11 @@ class SelectOptionComponent extends Component {
   }
 
   dropdownOptions() {
-    return productOptions.map((selectedOption, i) => (
-      <option key={i} value={selectedOption.productConfig}>
-        {selectedOption.productConfig}
+    const { options } = this.props;
+
+    return options.map((configOpt) => (
+      <option key={configOpt} value={configOpt}>
+        {configOpt}
       </option>
     ));
   }
@@ -50,11 +30,11 @@ class SelectOptionComponent extends Component {
     return (
       <div>
         <select
-          id="indivProd"
+          /* id="indivProd" */
           onChange={this.handleSelectChange}
           value={this.state.value}
         >
-          {this.dropdownOptions}
+          {this.dropdownOptions()}
         </select>
         <p>Value coming from state: {this.state.value}</p>
       </div>
@@ -63,43 +43,3 @@ class SelectOptionComponent extends Component {
 }
 
 export default SelectOptionComponent;
-
-// class SelectOptionComponent extends Component {
-//     constructor() {
-//         super();
-//         this.state = {
-//             checked: false,
-//             value: "Select a Product Configuration"
-//         };
-//         this.handleCheckBox = this.handleCheckBox.bind(this);
-//         this.handleSelectChange = this.handleSelectChange.bind(this);
-//     }
-
-// dropdownOptions() {
-//     return productOptions.map((selectOption) => (
-//         <option
-//             key={selectOption.productConfig}
-//             value={selectOption.productConfig}
-//         >
-//             {selectOption.productConfig}
-//         </option>
-//     ));
-// }
-
-//     render() {
-//         return (
-
-// This is an input component test
-//     < select
-// id = "indivProd"
-// onChange = { this.handleSelectChange }
-// value = { this.state.value }
-//     >
-//     { this.dropdownOptions }
-//         </select >
-//     <p>Value coming from state: {this.state.value}</p>
-
-// )
-// }
-
-// export default IndividualProduct;

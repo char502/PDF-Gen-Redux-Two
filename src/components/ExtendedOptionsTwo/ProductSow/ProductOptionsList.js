@@ -19,7 +19,7 @@ let productOptions = [
     product: "Encryption Key Manager Products",
     productConfig: [
       "Select an EKM Product Config",
-      "Scalar Key MAnager",
+      "Scalar Key Manager",
       "Quantum Scalar"
     ]
   },

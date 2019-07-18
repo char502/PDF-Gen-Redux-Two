@@ -33,12 +33,12 @@ class SimpleComponent extends Component {
       <div>
         <ul>
           {productOptions.map((product, i) => {
-            {
-              /* return <div key={i}>{product.product}</div>; */
-            }
             return (
               <div key={i}>
-                <IndividualProduct label={product.product} />
+                <IndividualProduct
+                  label={product.product}
+                  options={product.productConfig}
+                />
               </div>
             );
           })}
