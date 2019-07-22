@@ -3,11 +3,10 @@ import React, { Component } from "react";
 import SelectOptionComponent from "./SelectOptionComponent";
 
 class IndividualProduct extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      checked: false,
-      value: "Select a Product Configuration"
+      checked: false
     };
     this.handleCheckBox = this.handleCheckBox.bind(this);
   }
@@ -17,9 +16,13 @@ class IndividualProduct extends Component {
   }
 
   render() {
+    console.log(this.props);
     const content = this.state.checked ? (
       <div>
-        <SelectOptionComponent options={this.props.options} />
+        <SelectOptionComponent
+          options={this.props.options}
+          id={this.props.id}
+        />
       </div>
     ) : null;
     return (

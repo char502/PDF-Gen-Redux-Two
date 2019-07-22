@@ -36,6 +36,7 @@ class SimpleComponent extends Component {
             return (
               <div key={i}>
                 <IndividualProduct
+                  id={product.productId} // To help with reducer
                   label={product.productName}
                   options={product.productConfig}
                   image={product.productImage}

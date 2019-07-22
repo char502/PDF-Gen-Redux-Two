@@ -324,7 +324,8 @@ class PdfGenFormContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
   textArea: state.textArea,
-  list: state.list
+  list: state.list,
+  configOption: state.configOption
 });
 
 export default connect(

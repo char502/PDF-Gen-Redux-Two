@@ -22,12 +22,13 @@ export default (state = pdfGeneratorMainDefaultState, action) => {
         ...state,
         DXI: action.id
       };
-    default:
+
     case "ADD_SCA":
       return {
         ...state,
         DXI: action.id
       };
+    default:
       return state;
   }
 };

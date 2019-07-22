@@ -5,7 +5,7 @@ import quantumScalari3LTO from "../../../images/quantumScalari3LTO.jpg";
 
 let productOptions = [
   {
-    id: 1,
+    productId: 1,
     productName: "DXi Products",
     productImage: quantumDXiBackup,
     productImageAlt: "A DXi Backup machine",
@@ -17,7 +17,7 @@ let productOptions = [
     ]
   },
   {
-    id: 2,
+    productId: 2,
     productName: "Encryption Key Manager Products",
     productImage: quantumEncryptionKeyManager,
     productImageAlt: "quantumEncryptionKeyManager",
@@ -28,7 +28,7 @@ let productOptions = [
     ]
   },
   {
-    id: 3,
+    productId: 3,
     productName: "Quantum LATTUS Storage",
     productImage: quantumLATTUSStorage,
     productImageAlt: "Quantum LATTUS Storage",
@@ -39,7 +39,7 @@ let productOptions = [
     ]
   },
   {
-    id: 4,
+    productId: 4,
     productName: "Quantum Scalari 3LTO",
     productImage: quantumScalari3LTO,
     productImageAlt: "quantumScalari3LTO",
