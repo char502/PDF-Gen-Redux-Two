@@ -3,6 +3,8 @@ import productOptions from "./ProductOptionsList";
 import IndividualProduct from "./IndividualProduct";
 
 // console.log(productOptions);
+// let indivComponentId = 0
+// id: indivComponentId++
 
 class SimpleComponent extends Component {
   constructor() {
@@ -12,40 +14,22 @@ class SimpleComponent extends Component {
     };
   }
 
-  // const productToDisplay = productOptions.map((product) => {
-  //   <IndividualProduct key={product.id.toString()} value={product} />;
-  // });
-  // displayProducts = () => {
-  //   return productOptions.map((prod, i) => {
-  //     // console.log(prod.product);
-  //     {
-  //       <IndividualProduct
-  //         label="prod.product"
-  //         /* src=""
-  //       alt="" */
-  //       />;
-  //     }
-  //   });
-  // };
-
   render() {
+    // console.log(this.props.key);
     return (
       <div>
-        <ul>
-          {productOptions.map((product, i) => {
-            return (
-              <div key={i}>
-                <IndividualProduct
-                  id={product.productId} // To help with reducer
-                  label={product.productName}
-                  options={product.productConfig}
-                  image={product.productImage}
-                  alt={product.productImageAlt}
-                />
-              </div>
-            );
-          })}
-        </ul>
+        {productOptions.map((product) => (
+          /* <div key={i}> */
+
+          <IndividualProduct
+            key={product.productName}
+            id={product.productName} // To help with identification in reducer */
+            label={product.productName}
+            options={product.productConfig}
+            image={product.productImage}
+            alt={product.productImageAlt}
+          />
+        ))}
       </div>
 
       /* <div>{this.displayProducts()}</div>; */

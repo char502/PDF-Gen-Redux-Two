@@ -16,12 +16,13 @@ class IndividualProduct extends Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const content = this.state.checked ? (
       <div>
         <SelectOptionComponent
           options={this.props.options}
           id={this.props.id}
+          key={this.props.key}
         />
       </div>
     ) : null;

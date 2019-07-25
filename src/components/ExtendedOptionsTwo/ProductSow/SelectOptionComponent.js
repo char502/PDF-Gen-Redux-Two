@@ -39,6 +39,7 @@ class SelectOptionComponent extends Component {
     // const { id } = this.props;
 
     // console.log(this.props.id);
+    console.log(this.props);
     return (
       <div>
         <select
@@ -50,13 +51,20 @@ class SelectOptionComponent extends Component {
           {this.dropdownOptions()}
         </select>
         <p>Value coming from state: {this.state.configOption}</p>
-        <p>product id: {this.props.id}</p>
+        <p>Id: {this.props.id}</p>
+        {/* <p>product id: {this.props.id}</p> */}
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state, props) => ({
+  // let myState = state[ownProps.configOption];
+  // return {
+  //   myState
+  // };
+  // configOption: state.configOptions[props.counterKey]
+});
 
 export default connect(
   mapStateToProps,
