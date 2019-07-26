@@ -13,6 +13,7 @@ import CustomProfessionalServicesSow from "./ExtendedOptionsTwo/CustomProfession
 // import TeradataExtOptions from "./ExtendedOptions/TeradataExtOptions";
 // import CustomProfExtOptions from "./ExtendedOptions/CustomProfExtOptions";
 // import SowType from "./SOWType";
+import ProductSowRaul from "./raul/Product_Sow";
 
 // Redux
 import { connect } from "react-redux";
@@ -21,6 +22,14 @@ class PdfGenFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+
+      // Raul
+      DXI_Prod: '',
+      Encryp_Key_Prod: '',
+      Q_LATTUS: '',
+      Q_Scalari: '',
+
+
       DXi: "",
       id: null,
       serviceRegion: ["EMEA", "APAC", "NA & LATAM"],
@@ -85,6 +94,13 @@ class PdfGenFormContainer extends React.Component {
     if (prevProps.textArea !== this.props.textArea) {
       this.setState({ customerInformation: this.props.textArea });
     }
+
+    // update Parent state from redux state
+    const { DXI_Prod, Encryp_Key_Prod, Q_LATTUS, Q_Scalari } = this.props.product_sow.product_sow;
+    if(DXI_Prod !== prevState.DXI_Prod) return this.setState({ DXI_Prod });
+    if(Encryp_Key_Prod !== prevState.Encryp_Key_Prod) return this.setState({ Encryp_Key_Prod });
+    if(Q_LATTUS !== prevState.Q_LATTUS) return this.setState({ Q_LATTUS });
+    if(Q_Scalari !== prevState.Q_Scalari) return this.setState({ Q_Scalari });
   }
 
   getProductFamilies = () => {
@@ -116,6 +132,19 @@ class PdfGenFormContainer extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
+
+    // Raul
+    const { DXI_Prod, Encryp_Key_Prod, Q_LATTUS, Q_Scalari } = this.state;
+    const data = { DXI_Prod, Encryp_Key_Prod, Q_LATTUS, Q_Scalari };
+
+    // NOTE
+    // onSubmit you need to reset all states from redux
+    // ex this.props.reset_prod_sow({})
+    // passing a empty object
+
+    console.log(data);
+
+
     // let optionOne, optionTwo;
 
     // if(!this.props.DXI) {
@@ -259,6 +288,7 @@ class PdfGenFormContainer extends React.Component {
             <div>
               <CheckboxTestComponent />
               <ProductSow />
+              <ProductSowRaul />
               <TeradataCustomerSOW />
               <CustomProfessionalServicesSow />
             </div>
@@ -325,7 +355,8 @@ class PdfGenFormContainer extends React.Component {
 const mapStateToProps = (state) => ({
   textArea: state.textArea,
   list: state.list,
-  configOption: state.configOption
+  configOption: state.configOption,
+  product_sow: state.product_sow
 });
 
 export default connect(
